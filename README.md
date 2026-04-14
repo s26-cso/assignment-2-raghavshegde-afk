@@ -18,6 +18,8 @@ I then ooverwrite ra with the address to pass
 so it fails executes fail but when trying to return it goes to pass 
 there it prints the pass condition
 then because our reference point to the stack s0 is now garbage we have a segmentation fault occur
+we put null bytess and a few others  to represent address of pass
+u have to write into file from terminal or thru a program due to this else null char will just register as end of string(ie u cant type it in)
 
 
 
