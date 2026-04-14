@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>                         // Header for string manipulation (like sprintf)
 #include <dlfcn.h>                          // The "Dynamic Loading" library; essential for dlopen/dlsym
-
+//compile using :gcc main.c -ldl
 int main() {
     char op[6];
     int a, b;
-    while (scanf("%s %d %d", op, &a, &b)==3) {          // Reads till EOF, not in separate scanfs with input !=eof since it might still read and return values
+    while (scanf("%s %d %d", op, &a, &b)==3) {          // Reads till EOF or if wrong datatype, not in separate scanfs with input !=eof since it might still read and return values
         char libname[20];
         sprintf(libname, "./lib%s.so", op);             // Constructs the filename string for library, e.g., "add" becomes "./libadd.so"
         void *handle = dlopen(libname, RTLD_LAZY);      // dlopen attempts to load the shared library into memory.

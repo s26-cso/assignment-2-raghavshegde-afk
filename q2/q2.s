@@ -15,7 +15,7 @@ n_grt:
     addi t1, sp, 0  #t1=sp points to bottom of temp stack array
 
     addi t2, zero, 0 #t2=0,tracks no of elems in temp array
-    addi t3, a1, -1  #t3=a1-1(length -1) no of loops to run
+    addi t3, a1, -1  #t3=a1-1(length -1) no of loops to run(stops when less than 0)
 
 ng_loop:
     blt t3, zero, ng_over #if t3<0 branch
@@ -53,14 +53,14 @@ ng_w_end:
     
     slli t4, t3, 2   #get byte offset
     add t4, a2, t4  #get output arr adress
-    sw t6, 0(t4)    #store next greatest elem in t6 to t4
+    sw t6, 0(t4)    #store next greatest elem index in t6 to t4
     jal zero, ng_push   #jump to push next elem
 
 ng_no:
     slli t4, t3, 2   #byte offset
     add t4, a2, t4
     addi t6, zero, -1  #next greatest elem =-1 ie nonn existent
-    sw t6, 0(t4)    `#store -1 in output arrray
+    sw t6, 0(t4)    #store -1 in output arrray
 
 ng_push:
     slli t4, t2, 2      #stack size x 4 to get offset

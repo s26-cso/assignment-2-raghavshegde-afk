@@ -76,12 +76,12 @@ get:
     beq t0, a1, get_found #if nide has val = get arg, then jump
     blt a1, t0, get_left    #if a1 <t0 then go leftd
     
-    ld a0, 16(a0)    #a0=rrot-.left     
+    ld a0, 16(a0)    #a0=root->right     
     jal ra, get     #recursively call get
     jal zero, get_end #jump to end
 
 get_left:
-    ld a0, 8(a0)     #a0=root->right     
+    ld a0, 8(a0)     #a0=root->left     
     jal ra, get
     jal zero, get_end
 

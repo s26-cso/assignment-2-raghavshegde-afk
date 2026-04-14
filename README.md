@@ -20,3 +20,8 @@ there it prints the pass condition
 then because our reference point to the stack s0 is now garbage we have a segmentation fault occur
 
 
+
+### q5
+note that it cant handle spaces at end(idk why u would do that since we are looking for palindrome which is just one word that is same in reverse as forward but disclaimer)
+
+

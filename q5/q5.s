@@ -86,7 +86,7 @@ loop:
 
 is_pal:
     lui a0, %hi(yes_msg)                #upper 20  bits
-    addi a0, a0, %lo(yes_msg)           #lowest 12 bits
+    addi a0, a0, %lo(yes_msg)           #lower 12 bits
     call printf                         #prints yes
     jal x0, exit                        #jump
 
